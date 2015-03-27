@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="7.2.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -6155,6 +6155,7 @@ PDIP (N) 20 Pin Package &lt;br&gt;</description>
 <part name="C1" library="resistor" deviceset="C-US" device="C1206"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
+<part name="R4" library="resistor" deviceset="R-US_" device="R1206"/>
 </parts>
 <sheets>
 <sheet>
@@ -6163,14 +6164,15 @@ PDIP (N) 20 Pin Package &lt;br&gt;</description>
 <instances>
 <instance part="U$2" gate="G$1" x="-22.86" y="172.72"/>
 <instance part="JP1" gate="G$1" x="-15.24" y="137.16"/>
-<instance part="R1" gate="G$1" x="27.94" y="190.5"/>
-<instance part="R2" gate="G$1" x="27.94" y="182.88"/>
-<instance part="R3" gate="G$1" x="27.94" y="175.26"/>
+<instance part="R1" gate="G$1" x="-48.26" y="144.78"/>
+<instance part="R2" gate="G$1" x="48.26" y="160.02"/>
+<instance part="R3" gate="G$1" x="48.26" y="149.86"/>
 <instance part="LED1" gate="G$1" x="33.02" y="154.94"/>
 <instance part="BAT1" gate="G$1" x="15.24" y="142.24"/>
 <instance part="C1" gate="G$1" x="45.72" y="182.88"/>
 <instance part="GND1" gate="1" x="10.16" y="177.8"/>
 <instance part="GND2" gate="1" x="53.34" y="170.18"/>
+<instance part="R4" gate="G$1" x="48.26" y="154.94"/>
 </instances>
 <busses>
 </busses>
@@ -6178,14 +6180,29 @@ PDIP (N) 20 Pin Package &lt;br&gt;</description>
 <net name="VCC" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="1"/>
-<wire x1="-48.26" y1="180.34" x2="-55.88" y2="180.34" width="0.1524" layer="91"/>
-<label x="-58.42" y="180.34" size="1.778" layer="95"/>
+<wire x1="-48.26" y1="180.34" x2="-50.8" y2="180.34" width="0.1524" layer="91"/>
+<label x="-53.34" y="180.34" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="45.72" y1="185.42" x2="45.72" y2="190.5" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="190.5" x2="53.34" y2="190.5" width="0.1524" layer="91"/>
 <label x="50.8" y="190.5" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="BAT1" gate="G$1" pin="+"/>
+<wire x1="10.16" y1="142.24" x2="5.08" y2="142.24" width="0.1524" layer="91"/>
+<label x="5.08" y="142.24" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP1" gate="G$1" pin="2"/>
+<wire x1="-10.16" y1="137.16" x2="-7.62" y2="137.16" width="0.1524" layer="91"/>
+<label x="-7.62" y="137.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="-53.34" y1="144.78" x2="-55.88" y2="144.78" width="0.1524" layer="91"/>
+<label x="-58.42" y="144.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -6201,10 +6218,125 @@ PDIP (N) 20 Pin Package &lt;br&gt;</description>
 <wire x1="45.72" y1="172.72" x2="53.34" y2="172.72" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="BAT1" gate="G$1" pin="-"/>
+<wire x1="20.32" y1="142.24" x2="22.86" y2="142.24" width="0.1524" layer="91"/>
+<label x="22.86" y="142.24" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP1" gate="G$1" pin="1"/>
+<wire x1="-10.16" y1="134.62" x2="-7.62" y2="134.62" width="0.1524" layer="91"/>
+<label x="-7.62" y="134.62" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="53.34" y1="160.02" x2="55.88" y2="160.02" width="0.1524" layer="91"/>
+<label x="55.88" y="160.02" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R3" gate="G$1" pin="2"/>
+<wire x1="53.34" y1="149.86" x2="55.88" y2="149.86" width="0.1524" layer="91"/>
+<label x="55.88" y="149.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="53.34" y1="154.94" x2="55.88" y2="154.94" width="0.1524" layer="91"/>
+<label x="55.88" y="154.94" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RED" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="9"/>
+<wire x1="-48.26" y1="160.02" x2="-50.8" y2="160.02" width="0.1524" layer="91"/>
+<label x="-53.34" y="160.02" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="LED1" gate="G$1" pin="RED_A"/>
+<wire x1="27.94" y1="149.86" x2="25.4" y2="149.86" width="0.1524" layer="91"/>
+<label x="25.4" y="149.86" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="GRN" class="0">
+<segment>
+<pinref part="LED1" gate="G$1" pin="GREEN_A"/>
+<wire x1="27.94" y1="154.94" x2="25.4" y2="154.94" width="0.1524" layer="91"/>
+<label x="25.4" y="154.94" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="4"/>
+<wire x1="-48.26" y1="172.72" x2="-50.8" y2="172.72" width="0.1524" layer="91"/>
+<label x="-53.34" y="172.72" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="LED1" gate="G$1" pin="RED_C"/>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="43.18" y1="149.86" x2="38.1" y2="149.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="TST" class="0">
+<segment>
+<pinref part="JP1" gate="G$1" pin="4"/>
+<wire x1="-10.16" y1="142.24" x2="-7.62" y2="142.24" width="0.1524" layer="91"/>
+<label x="-7.62" y="142.24" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="17"/>
+<wire x1="0" y1="172.72" x2="2.54" y2="172.72" width="0.1524" layer="91"/>
+<label x="2.54" y="172.72" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RST" class="0">
+<segment>
+<pinref part="JP1" gate="G$1" pin="3"/>
+<wire x1="-10.16" y1="139.7" x2="-7.62" y2="139.7" width="0.1524" layer="91"/>
+<label x="-7.62" y="139.7" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="16"/>
+<wire x1="0" y1="170.18" x2="2.54" y2="170.18" width="0.1524" layer="91"/>
+<label x="2.54" y="170.18" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="-43.18" y1="144.78" x2="-40.64" y2="144.78" width="0.1524" layer="91"/>
+<label x="-40.64" y="144.78" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="R2" gate="G$1" pin="1"/>
+<pinref part="LED1" gate="G$1" pin="BLUE_C"/>
+<wire x1="43.18" y1="160.02" x2="38.1" y2="160.02" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="BLU" class="0">
+<segment>
+<pinref part="LED1" gate="G$1" pin="BLUE_A"/>
+<wire x1="27.94" y1="160.02" x2="25.4" y2="160.02" width="0.1524" layer="91"/>
+<label x="25.4" y="160.02" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="12"/>
+<wire x1="0" y1="160.02" x2="5.08" y2="160.02" width="0.1524" layer="91"/>
+<label x="2.54" y="160.02" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="LED1" gate="G$1" pin="GREEN_C"/>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="38.1" y1="154.94" x2="43.18" y2="154.94" width="0.1524" layer="91"/>
+</segment>
 </net>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="113,1,-13.3773,139.895,JP1,,,,,"/>
+<approved hash="113,1,-48.26,145.775,R1,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 </eagle>
